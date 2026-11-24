@@ -13,7 +13,7 @@ Effective date: November 20, 2026
 
 This policy covers the Tacita app for iPhone and Android ("the app"), including its share extension.
 
-The app is provided by **Zhe Wang**, an individual developer ("the Developer", "we"). For privacy questions or requests, email **tacita.app@gmail.com**.
+The app is provided by **Zhe Wang**, an individual developer ("the Developer", "we"). For privacy questions or requests, email [tacita.app@gmail.com](mailto:tacita.app@gmail.com).
 
 ## 2. In short
 

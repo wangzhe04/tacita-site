@@ -13,7 +13,7 @@ permalink: /privacy-zh/
 
 本政策适用于 iPhone 与 Android 上的 Tacita 应用（下称“本应用”），包括它的分享扩展。
 
-本应用由个人开发者 **Zhe Wang**（下称“开发者”或“我们”）提供。关于隐私的问题和请求，请发邮件至 **tacita.app@gmail.com**。
+本应用由个人开发者 **Zhe Wang**（下称“开发者”或“我们”）提供。关于隐私的问题和请求，请发邮件至 [tacita.app@gmail.com](mailto:tacita.app@gmail.com)。
 
 ## 2. 先说结论
 
