@@ -101,6 +101,7 @@ When you confirm, the app sends the previewed report over HTTPS to `reports.taci
 
 ## 10. Retention and deletion
 
+- Only the developer has access to the project mailbox and checks it at least once a week. Report emails are deleted within 30 days after the report is resolved. You can ask about a report using its ID.
 - Conversations, the placeholder map, rules and saved keys: kept until you delete them.
 - Receipts and web-request metadata: 90 days. Local statistics: 13 months. Search terms and URLs: at most 7 days.
 - You can delete a conversation, all conversations, rules, statistics or a provider connection at any time. Uninstalling the app deletes all data on the device.
