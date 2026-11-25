@@ -7,7 +7,7 @@ permalink: /privacy/
 
 # Tacita Privacy Policy
 
-Effective date: November 20, 2026
+Effective date: November 25, 2026
 
 ## 1. Scope and who is responsible
 
@@ -17,21 +17,21 @@ The app is provided by **Zhe Wang**, an individual developer ("the Developer", "
 
 ## 2. In short
 
-- **We don't run servers.** Your conversations, attachments, rules and keys stay on your device. The Developer cannot see or remotely access them.
+- Your chat database, attachments, rules and saved keys stay on your device. If you choose to report an answer, the developer receives the report you review and confirm (section 7).
 - **Answers come from the AI provider you configure.** Content goes directly from your device to the provider whose API key you entered, without passing through us.
-- **Before anything is sent, the app replaces detected sensitive content with placeholders or masks it**, and shows you what will be sent. Original values stay on your device and are restored there when the answer arrives.
+- **Before anything is sent, the app replaces detected sensitive content with codes (placeholders) or masks it**, and shows you what will be sent. Original values stay on your device and are restored there when the answer arrives.
 - **No ads, no analytics, no crash reporting, no tracking.**
 - Detection cannot be perfect, and we do not promise that nothing will ever leak. Check the preview before you send.
 
 ## 3. What stays on your device
 
-**What is stored.** Conversations, your original text, model replies, the map between placeholders and original values, your rules and protected items, provider and search-service API keys and connection details, a receipt for each send, local statistics, a search index, and attachments you add (the original file and its extracted text). The free version's daily message count is also kept on the device.
+**What is stored.** Conversations, your original text, model replies, the map between codes (placeholders) and original values, your rules and protected items, provider and search-service API keys and connection details, a receipt for each send, local statistics, a search index, and attachments you add (the original file and its extracted text). The free version's daily message count is also kept on the device.
 
 **How it is protected.**
 - This data lives in an encrypted database on your device. On iPhone the database key is kept in the Keychain, available only while the device is unlocked and never moved to another device. On Android it is protected by a non-exportable key in the system keystore.
 - This data is **excluded** from iCloud backup, Google backup and device-to-device transfer.
 - You can turn on an app lock (Face ID, fingerprint or device passcode) and hide the app in the app switcher.
-- Text copied from the app is marked sensitive. On iPhone it stays on the local clipboard and expires after 2 minutes. By default a copy restores placeholders, but credentials stay masked.
+- On iPhone, copied text stays on the local clipboard and expires after two minutes. On Android, Tacita clears its own copy after two minutes when it can access the clipboard. It checks again when you return to the app or reopen it. Android 13 and later also mark the copy as sensitive. By default a copy restores placeholders, but credentials stay masked.
 - An image shared into the app is stored encrypted until the app picks it up, then deleted.
 
 **Attachments and images.** Text extraction and image text recognition (OCR) happen on your device. Only the text you select is sent to a provider; original files, image pixels, and photo location and capture details are not.
@@ -44,7 +44,7 @@ The provider you connect (for example the built-in OpenAI or DeepSeek templates,
 - **Recent history from the same conversation**, protected again under the current rules. Other conversations are never included.
 - A fixed note explaining the placeholders to the model, plus tool descriptions when you use web access or "suggest protection".
 - **Attachments**: only the extracted, fully checked text you selected, and the file name.
-- **Conversation titles (on by default; turn off in Settings › Model)**: after the first answer, one extra request with at most the first 600 characters of your first message (protected), without attachments or the answer.
+- **Conversation titles (on by default; turn off in Settings › Models)**: after the first answer, one extra request with at most the first 600 characters of your first message (protected), without attachments or the answer.
 - **Connection checks**: a request for the provider's model list, which includes your API key.
 
 Providers also see connection information such as your IP address, and your API key (used for billing).
@@ -74,16 +74,19 @@ Search terms and URLs are kept on the device for at most 7 days (cleared the nex
 
 ## 6. Other connections
 
-- **Purchases**: the one-time purchase goes through the Apple App Store (Google Play for Android, when available). The store handles payment; we never receive your card details. The app reads the store's purchase record on the device. There is no developer licence server and no device identifier is collected.
+- **Purchases**: the one-time purchase goes through the Apple App Store (Google Play for Android, when available). The store handles payment; we never receive your card details. The app reads the store's purchase record on the device. There is no developer license server and no device identifier is collected.
 - **Links**: opened in the system browser only when you tap them, after showing the real domain. The app never loads remote images or link previews on its own.
 - **Saving and sharing files**: only when you choose to through the system save or share screens.
-- **The app connects to nothing else.** There is no analytics, advertising, crash-reporting or third-party tracking code, and no developer server. "Diagnostics" are generated on the device and only leave it if you copy them yourself; they contain no conversations, keys or placeholders.
+- **Pro model download on iPhone**: when you request the model, iOS downloads the files from Apple’s asset hosting. This download does not include your conversations, attachments or provider keys. Analysis runs on your device.
+- Diagnostics are generated on your device and you can choose to copy them. An optional connection to the developer for reporting an answer is described in section 7.
 
 If you email us, we receive your email address and message and use them only to reply. Please do not send API keys or private conversations by email.
 
 ## 7. In-app reporting
 
-The current version **does not offer** in-app reporting and sends no reports. If we add it, we will update this policy first, and a report will be sent only after you review the full preview and confirm.
+TestFlight 1.0 (8) has no report action. In builds with **Report this answer**, long-press a saved answer, select a reason and edit the protected text. Review the complete report before confirming. It includes the selected answer as edited and protected, your reason, the provider and model labels, the app version, the report format version and a random report ID. Check for any private details that detection missed.
+
+When you confirm, the app sends the previewed report over HTTPS to `reports.tacitachat.com`. Cloudflare processes the request and uses the connection IP address for rate limiting. The Worker sends the report to the developer at `tacita.app@gmail.com`, hosted by Google. The IP address is not included in the report email. The app sends no other messages, attachments, keys or placeholder map with the report. The developer uses the email to review the reported answer. You can request deletion by emailing the developer with the report ID.
 
 ## 8. Encrypted backups and exports
 
@@ -105,11 +108,11 @@ The current version **does not offer** in-app reporting and sends no reports. If
 
 ## 11. International processing
 
-The provider you choose may process data outside your country or region (for example, OpenAI in the United States and DeepSeek in mainland China). Data goes directly from your device to the provider you choose, and, when web access is on, to the search services and websites listed in section 5; you decide whether and where it is sent. Using your own key does not by itself prevent international transfers.
+The provider you choose may process data outside your country or region (for example, OpenAI in the United States and DeepSeek in mainland China). Data goes directly from your device to the provider you choose, and, when web access is on, to the search services and websites listed in section 5; you decide whether and where it is sent. Using your own key does not by itself prevent international transfers. Cloudflare and Google may also process reports outside your country or region if you choose to submit one.
 
 ## 12. Your rights
 
-We do not collect or keep your personal information, so you can view, change, export and delete your data directly in the app. For information you send us by email, you can ask to access, correct or delete it. You may also complain to your local regulator.
+You can view, change, export and delete your local data directly in the app. For information you send to the developer by email or through an in-app report, you may request access, correction or deletion. You may also complain to your local regulator.
 
 **By region:**
 - **Mainland China**: personal information of minors under 14 is sensitive personal information and requires a guardian's consent.
